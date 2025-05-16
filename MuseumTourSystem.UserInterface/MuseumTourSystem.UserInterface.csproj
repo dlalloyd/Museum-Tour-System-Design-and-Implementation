@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MuseumTourSystem.BusinessLogic\MuseumTourSystem.BusinessLogic.csproj" />
+    <ProjectReference Include="..\MuseumTourSystem.DataStorage\MuseumTourSystem.DataStorage.csproj" />
+    <ProjectReference Include="..\MuseumTourSystem.Models\MuseumTourSystem.Models.csproj" />
+  </ItemGroup>
+
 </Project>

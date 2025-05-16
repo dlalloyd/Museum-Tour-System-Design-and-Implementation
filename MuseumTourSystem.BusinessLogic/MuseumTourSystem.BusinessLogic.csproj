@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MuseumTourSystem.Models\MuseumTourSystem.Models.csproj" />
+  </ItemGroup>
+
 </Project>
