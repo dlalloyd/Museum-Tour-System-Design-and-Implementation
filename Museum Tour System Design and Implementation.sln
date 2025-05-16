@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MuseumTourSystem.Models", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MuseumTourSystem.BusinessLogic", "MuseumTourSystem.BusinessLogic\MuseumTourSystem.BusinessLogic.csproj", "{50B8BA4A-366E-44B0-B75E-28A7A31A26AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MuseumTourSystem.DataStorage", "MuseumTourSystem.DataStorage\MuseumTourSystem.DataStorage.csproj", "{6443CF34-7472-4D58-A77C-D80729A9E253}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{50B8BA4A-366E-44B0-B75E-28A7A31A26AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50B8BA4A-366E-44B0-B75E-28A7A31A26AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50B8BA4A-366E-44B0-B75E-28A7A31A26AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6443CF34-7472-4D58-A77C-D80729A9E253}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6443CF34-7472-4D58-A77C-D80729A9E253}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6443CF34-7472-4D58-A77C-D80729A9E253}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6443CF34-7472-4D58-A77C-D80729A9E253}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
