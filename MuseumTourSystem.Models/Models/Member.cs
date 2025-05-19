@@ -8,7 +8,7 @@ namespace MuseumTourSystem.Models.Models
 {
     public class Member
     {
-        public int Id { get; }
+        public string Id { get; }
 
         public string Name { get; }
 
@@ -60,9 +60,9 @@ namespace MuseumTourSystem.Models.Models
                 throw new InvalidOperationException("Museum visit must be associated with a city");
             }
 
-            if (!Tours.ContainCity(museumVisit.City))
+            if (!Touring.ContainsCity(museumVisit.City))
             {
-
+                return false;
             }
 
             if (!RegisteredMuseumVisits.Contains(museumVisit))
@@ -103,18 +103,6 @@ namespace MuseumTourSystem.Models.Models
             return RegisteredMuseumVisits.Sum(mv => mv.Cost);
         }
 
-        public decimal CalculateAdditionalCost()
-        {
-            if (RegisteredMuseumVisits.Count <= IncludedVisits)
-            {
-                return 0;
-            }
-
-            int additionalVisits = RegisteredMuseumVisits.Count - IncludedVisits;
-            return RegisteredMuseumVisits.OrderByDescending(mv => mv.Cost)
-                .Skip(IncludedVisits)
-                .Sum(mv => mv.Cost);
-        }
         public decimal CalculateAdditionalCost()
         {
             if (RegisteredMuseumVisits.Count <= IncludedVisits)
