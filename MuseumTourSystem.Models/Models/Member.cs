@@ -70,7 +70,83 @@ namespace MuseumTourSystem.Models.Models
                 throw new InvalidOperationException("Museum visit must be associated with a city");
             }
 
-            return false
+            return false;
         }
+
+        public bool CancelMuseumVisit(MuseumVisit museumVisit)
+        {
+            if (museumVisit == null)
+            {
+                throw new ArgumentNullException(nameof(museumVisit), "Museum visit cannot be null");
+            }
+
+            if (RegisteredMuseumVisits.Remove(museumVisit))
+            {
+                museumVisit.UnregisterMember(this);
+                return true;
+            }
+
+            return false;
+        }
+        public bool IsRegisteredForMuseumVisit(MuseumVisit museumVisit)
+        {
+            if (museumVisit == null)
+            {
+                throw new ArgumentNullException(nameof(museumVisit), "Museum visit cannot be null");
+            }
+
+            return RegisteredMuseumVisits.Contains(museumVisit);
+        }
+
+        public decimal GetTotalMuseumVisitCost()
+        {
+            return RegisteredMuseumVisits.Sum(mv => mv.Cost);
+        }
+
+        public decimal CalculateAdditionalCost()
+        {
+            if (RegisteredMuseumVisits.Count <= IncludedVisits)
+            {
+                return 0;
+            }
+
+            int additionalVisits = RegisteredMuseumVisits.Count - IncludedVisits;
+            return RegisteredMuseumVisits.OrderByDescending(mv => mv.Cost)
+                .Skip(IncludedVisits)
+                .Sum(mv => mv.Cost);
+        }
+        public decimal CalculateAdditionalCost()
+        {
+            if (RegisteredMuseumVisits.Count <= IncludedVisits)
+            {
+                return 0;
+            }
+
+            int additionalVisits = RegisteredMuseumVisits.Count - IncludedVisits;
+            return RegisteredMuseumVisits.OrderByDescending(mv => mv.Cost)
+                .Skip(IncludedVisits)
+                .Sum(mv => mv.Cost);
+        }
+
+        public override bool Equals(object? obj)
+        {
+            if (obj == null || !(obj is Member))
+                return false;
+
+            var other = obj as Member;
+            return Id.Equals(other!.Id);
+        }
+
+        public override int GetHashCode()
+        {
+            return Id.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return $"{Name} (Booking: {BookingNumber})";
+        }
+
+
     }
 }
