@@ -11,8 +11,4 @@
     <ProjectReference Include="..\MuseumTourSystem.Models\MuseumTourSystem.Models.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
 </Project>
