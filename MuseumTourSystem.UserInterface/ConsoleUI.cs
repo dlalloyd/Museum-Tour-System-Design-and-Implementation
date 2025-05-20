@@ -66,9 +66,9 @@ namespace MuseumTourSystem.UserInterface
             Console.WriteLine("2. Manage Cities");
             Console.WriteLine("3. Manage Museum Visits");
             Console.WriteLine("4. Manage Members");
-            Console.WriteLine("5. Manage City-Tour Relationships");
-            Console.WriteLine("6. Manage Member-Tour Relationships");
-            Console.WriteLine("7. Manage Member-Museum Visit Relation-ships");
+            Console.WriteLine("5. Manage City Tour Relationships");
+            Console.WriteLine("6. Manage Member Tour Relationships");
+            Console.WriteLine("7. Manage Member Museum Visit Relationships");
             Console.WriteLine("8. View Reports");
             Console.WriteLine("0. Exit");
             Console.WriteLine("===================================================");
@@ -142,7 +142,7 @@ namespace MuseumTourSystem.UserInterface
                     return choice;
                 }
 
-                Console.Write($"Invalid choice. Please enter a number be-tween {min} and {max}: ");
+                Console.Write($"Invalid choice. Please enter a number between {min} and {max}: ");
             }
         }
 
@@ -191,7 +191,7 @@ namespace MuseumTourSystem.UserInterface
                     return value;
                 }
 
-                Console.WriteLine("Invalid value. Please enter a non-negative decimal number.");
+                Console.WriteLine("Invalid value. Please enter a non negative decimal number.");
             }
             while (true);
         }
@@ -688,7 +688,7 @@ namespace MuseumTourSystem.UserInterface
             {
                 Console.Clear();
                 Console.WriteLine("===================================================");
-                Console.WriteLine("                  MANAGE MEM-BERS                   ");
+                Console.WriteLine("                  MANAGE MEMBERS                   ");
                 Console.WriteLine("===================================================");
                 Console.WriteLine("1. Add a new member");
                 Console.WriteLine("2. Remove a member");
@@ -931,7 +931,7 @@ namespace MuseumTourSystem.UserInterface
 
             if (cities.Count == 0)
             {
-                DisplayError("No cities available to add to this tour. Ei-ther there are no cities in the system, or all cities are already part of this tour.");
+                DisplayError("No cities available to add to this tour. Either there are no cities in the system, or all cities are already part of this tour.");
                 return;
             }
 
@@ -1046,7 +1046,7 @@ namespace MuseumTourSystem.UserInterface
 
         private void ManageMemberTourRelationships()
         {
-            DisplayError("This functionality is already handled in the Man-age Members section. A member is always created with a tour assignment, and removing a member removes them from their tour.");
+            DisplayError("This functionality is already handled in the Manage Members section. A member is always created with a tour assignment, and removing a member removes them from their tour.");
         }
 
         private void ManageMemberMuseumVisitRelationships()
@@ -1057,10 +1057,10 @@ namespace MuseumTourSystem.UserInterface
             {
                 Console.Clear();
                 Console.WriteLine("===================================================");
-                Console.WriteLine("      MANAGE MEMBER-MUSEUM VISIT RELATIONSHIPS     ");
+                Console.WriteLine("      MANAGE MEMBER MUSEUM VISIT RELATIONSHIPS     ");
                 Console.WriteLine("===================================================");
                 Console.WriteLine("1. Add a member to a museum visit");
-                Console.WriteLine("2. Remove a member from a museum vis-it");
+                Console.WriteLine("2. Remove a member from a museum visit");
                 Console.WriteLine("0. Back to main menu");
                 Console.WriteLine("===================================================");
                 Console.Write("Enter your choice: ");
@@ -1120,7 +1120,7 @@ namespace MuseumTourSystem.UserInterface
 
             if (selectedMember.Touring == null)
             {
-                DisplayError($"Member '{selectedMember.Name}' is not as-signed to any tour.");
+                DisplayError($"Member '{selectedMember.Name}' is not assigned to any tour.");
                 return;
             }
 
@@ -1132,7 +1132,7 @@ namespace MuseumTourSystem.UserInterface
 
             if (museumVisits.Count == 0)
             {
-                DisplayError($"No available museum visits for member '{selectedMember.Name}' to join. Either there are no museum visits in the cit-ies of their tour, or they're already registered for all available vis-its.");
+                DisplayError($"No available museum visits for member '{selectedMember.Name}' to join. Either there are no museum visits in the cities of their tour, or they're already registered for all available visits.");
                 return;
             }
 
@@ -1215,7 +1215,7 @@ namespace MuseumTourSystem.UserInterface
 
             if (selectedMember.RegisteredMuseumVisits.Count == 0)
             {
-                DisplayError($"Member '{selectedMember.Name}' is not regis-tered for any museum visits.");
+                DisplayError($"Member '{selectedMember.Name}' is not registered for any museum visits.");
                 return;
             }
 
@@ -1247,7 +1247,7 @@ namespace MuseumTourSystem.UserInterface
                     decimal additionalCost = selectedMember.CalculateAdditionalCost();
                     if (additionalCost > 0)
                     {
-                        DisplaySuccess($"NOTE: Member '{selectedMember.Name}' still has additional costs of {additionalCost:C} due to exceed-ing the included visits limit.");
+                        DisplaySuccess($"NOTE: Member '{selectedMember.Name}' still has additional costs of {additionalCost:C} due to exceeding the included visits limit.");
                     }
                     else
                     {

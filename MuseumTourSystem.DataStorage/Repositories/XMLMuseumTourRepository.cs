@@ -401,7 +401,7 @@ namespace MuseumTourSystem.DataStorage.Repositories
         }
 
         /// <summary>
-        /// Deserializes a tour element from XML
+        /// Deserialises a tour element from XML
         /// </summary>
         private Tours DeserializeTour(XElement element)
         {
@@ -412,7 +412,7 @@ namespace MuseumTourSystem.DataStorage.Repositories
         }
 
         /// <summary>
-        /// Deserializes a city element from XML
+        /// Deserialises a city element from XML
         /// </summary>
         private City DeserializeCity(XElement element)
         {
@@ -423,7 +423,7 @@ namespace MuseumTourSystem.DataStorage.Repositories
         }
 
         /// <summary>
-        /// Deserializes a museum visit element from XML
+        /// Deserialises a museum visit element from XML
         /// </summary>
         private MuseumVisit DeserializeMuseumVisit(XElement element)
         {
@@ -443,7 +443,7 @@ namespace MuseumTourSystem.DataStorage.Repositories
         }
 
         /// <summary>
-        /// Deserializes a member element from XML
+        /// Deserialises a member element from XML
         /// </summary>
         private Member DeserializeMember(XElement element)
         {
@@ -553,7 +553,7 @@ namespace MuseumTourSystem.DataStorage.Repositories
         <xs:element name=""Tours"">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name=""Tour"" minOccurs=""0"" max-Occurs=""unbounded"">
+              <xs:element name=""Tour"" minOccurs=""0"" maxOccurs=""unbounded"">
                 <xs:complexType>
                   <xs:sequence>
                     <xs:element name=""Name"" type=""xs:string"" />

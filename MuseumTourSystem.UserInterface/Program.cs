@@ -15,8 +15,8 @@ namespace MuseumTourSystem.UserInterface
                 string appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MuseumTourSystem");
                 Directory.CreateDirectory(appDataPath);
 
-                string dataFilePath = Path.Combine(appDataPath, "Muse-umTourData.xml");
-                string schemaFilePath = Path.Combine(appDataPath, "Muse-umTourSchema.xsd");
+                string dataFilePath = Path.Combine(appDataPath, "MuseumTourData.xml");
+                string schemaFilePath = Path.Combine(appDataPath, "MuseumTourSchema.xsd");
 
                 // Create repository and service
                 var repository = new XMLMuseumTourRepository(dataFilePath, schemaFilePath);
