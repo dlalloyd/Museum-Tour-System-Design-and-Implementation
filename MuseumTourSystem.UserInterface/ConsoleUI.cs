@@ -51,7 +51,7 @@ namespace MuseumTourSystem.UserInterface
         {
             Console.Clear();
             Console.WriteLine("===================================================");
-            Console.WriteLine("         MUSEUM TOUR ADMINISTRATION SYS-TEM         ");
+            Console.WriteLine("         MUSEUM TOUR ADMINISTRATION SYSTEM         ");
             Console.WriteLine("===================================================");
             Console.WriteLine();
         }
@@ -385,7 +385,7 @@ namespace MuseumTourSystem.UserInterface
             {
                 Console.Clear();
                 Console.WriteLine("===================================================");
-                Console.WriteLine("                  MANAGE CIT-IES                    ");
+                Console.WriteLine("                  MANAGE CITIES                    ");
                 Console.WriteLine("===================================================");
                 Console.WriteLine("1. Add a new city");
                 Console.WriteLine("2. Remove a city");
@@ -492,7 +492,7 @@ namespace MuseumTourSystem.UserInterface
         {
             Console.Clear();
             Console.WriteLine("===================================================");
-            Console.WriteLine("                    ALL CIT-IES                     ");
+            Console.WriteLine("                    ALL CITIES                     ");
             Console.WriteLine("===================================================");
 
             var cities = _service.GetAllCities().ToList();
@@ -525,7 +525,7 @@ namespace MuseumTourSystem.UserInterface
             {
                 Console.Clear();
                 Console.WriteLine("===================================================");
-                Console.WriteLine("               MANAGE MUSEUM VIS-ITS                ");
+                Console.WriteLine("               MANAGE MUSEUM VISITS                ");
                 Console.WriteLine("===================================================");
                 Console.WriteLine("1. Add a new museum visit");
                 Console.WriteLine("2. Remove a museum visit");
@@ -585,7 +585,7 @@ namespace MuseumTourSystem.UserInterface
             var selectedCity = cities[choice - 1];
             try
             {
-                var museumVisit = _service.AddMuseumVisit(id, museumName, visitDate, cost, selectedCity);
+                var museumVisit = _service.AddMuseumVisit(id, selectedCity.Id, museumName, visitDate, cost);
                 DisplaySuccess($"Museum Visit '{museumVisit.MuseumName}' (ID: {museumVisit.Id}) added successfully.");
             }
             catch (Exception ex)
@@ -721,7 +721,7 @@ namespace MuseumTourSystem.UserInterface
         {
             Console.Clear();
             Console.WriteLine("===================================================");
-            Console.WriteLine("                   ADD A MEM-BER                    ");
+            Console.WriteLine("                   ADD A MEMBER                    ");
             Console.WriteLine("===================================================");
 
             var tours = _service.GetAllTours().ToList();
@@ -769,7 +769,7 @@ namespace MuseumTourSystem.UserInterface
         {
             Console.Clear();
             Console.WriteLine("===================================================");
-            Console.WriteLine("                  REMOVE A MEM-BER                  ");
+            Console.WriteLine("                  REMOVE A MEMBER                  ");
             Console.WriteLine("===================================================");
 
             var members = _service.GetAllMembers().ToList();
@@ -822,7 +822,7 @@ namespace MuseumTourSystem.UserInterface
         {
             Console.Clear();
             Console.WriteLine("===================================================");
-            Console.WriteLine("                   ALL MEM-BERS                     ");
+            Console.WriteLine("                   ALL MEMBERS                     ");
             Console.WriteLine("===================================================");
 
             var members = _service.GetAllMembers().ToList();
@@ -867,7 +867,7 @@ namespace MuseumTourSystem.UserInterface
             {
                 Console.Clear();
                 Console.WriteLine("===================================================");
-                Console.WriteLine("            MANAGE CITY-TOUR RELATION-SHIPS         ");
+                Console.WriteLine("            MANAGE CITY TOUR RELATIONSHIPS         ");
                 Console.WriteLine("===================================================");
                 Console.WriteLine("1. Add a city to a tour");
                 Console.WriteLine("2. Remove a city from a tour");
@@ -1057,7 +1057,7 @@ namespace MuseumTourSystem.UserInterface
             {
                 Console.Clear();
                 Console.WriteLine("===================================================");
-                Console.WriteLine("      MANAGE MEMBER-MUSEUM VISIT RELA-TIONSHIPS     ");
+                Console.WriteLine("      MANAGE MEMBER-MUSEUM VISIT RELATIONSHIPS     ");
                 Console.WriteLine("===================================================");
                 Console.WriteLine("1. Add a member to a museum visit");
                 Console.WriteLine("2. Remove a member from a museum vis-it");
@@ -1089,7 +1089,7 @@ namespace MuseumTourSystem.UserInterface
         {
             Console.Clear();
             Console.WriteLine("===================================================");
-            Console.WriteLine("           ADD A MEMBER TO A MUSEUM VIS-IT          ");
+            Console.WriteLine("           ADD A MEMBER TO A MUSEUM VISIT          ");
             Console.WriteLine("===================================================");
 
             var members = _service.GetAllMembers().ToList();
@@ -1184,7 +1184,7 @@ namespace MuseumTourSystem.UserInterface
         {
             Console.Clear();
             Console.WriteLine("===================================================");
-            Console.WriteLine("        REMOVE A MEMBER FROM A MUSEUM VIS-IT        ");
+            Console.WriteLine("        REMOVE A MEMBER FROM A MUSEUM VISIT        ");
             Console.WriteLine("===================================================");
 
             var members = _service.GetAllMembers().ToList();
@@ -1276,7 +1276,7 @@ namespace MuseumTourSystem.UserInterface
             {
                 Console.Clear();
                 Console.WriteLine("===================================================");
-                Console.WriteLine("                   VIEW RE-PORTS                    ");
+                Console.WriteLine("                   VIEW REPORTS                    ");
                 Console.WriteLine("===================================================");
                 Console.WriteLine("1. Tour summary report");
                 Console.WriteLine("2. Member costs report");
@@ -1310,7 +1310,7 @@ namespace MuseumTourSystem.UserInterface
         {
             Console.Clear();
             Console.WriteLine("===================================================");
-            Console.WriteLine("                 TOUR SUMMARY RE-PORT               ");
+            Console.WriteLine("                 TOUR SUMMARY REPORT               ");
             Console.WriteLine("===================================================");
 
             var tours = _service.GetAllTours().ToList();
@@ -1355,7 +1355,7 @@ namespace MuseumTourSystem.UserInterface
         {
             Console.Clear();
             Console.WriteLine("===================================================");
-            Console.WriteLine("               MEMBER COSTS RE-PORT                 ");
+            Console.WriteLine("               MEMBER COSTS REPORT                 ");
             Console.WriteLine("===================================================");
 
             var members = _service.GetAllMembers().ToList();
@@ -1379,7 +1379,7 @@ namespace MuseumTourSystem.UserInterface
                         Console.WriteLine("Museum Visits:");
                         foreach (var visit in member.RegisteredMuseumVisits)
                         {
-                            Console.WriteLine($"  - {visit.MuseumName} in {visit.City?.Name} on {visit.VisitDate.ToShortDateString()} (Cost: {member.Cost:C})");
+                            Console.WriteLine($"  - {visit.MuseumName} in {visit.City?.Name} on {visit.VisitDate.ToShortDateString()} (Cost: {visit.Cost:C})");
                         }
                     }
 
@@ -1397,7 +1397,7 @@ namespace MuseumTourSystem.UserInterface
         {
             Console.Clear();
             Console.WriteLine("===================================================");
-            Console.WriteLine("           MUSEUM VISIT POPULARITY RE-PORT          ");
+            Console.WriteLine("           MUSEUM VISIT POPULARITY REPORT          ");
             Console.WriteLine("===================================================");
 
             var museumVisits = _service.GetAllMuseumVisits().ToList();

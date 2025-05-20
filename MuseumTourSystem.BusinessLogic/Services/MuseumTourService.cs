@@ -298,7 +298,7 @@ namespace MuseumTourSystem.BusinessLogic.Services
             var member = _repository.GetMemberById(memberId);
             if (member == null)
             {
-                throw new ApplicationException($"Member with ID '{member - Id}' not found");
+                throw new ApplicationException($"Member with ID '{memberId}' not found");
             }
 
             var visit = _repository.GetMuseumVisitById(visitId);

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35521.163 d17.12
+VisualStudioVersion = 17.12.35521.163
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MuseumTourSystem.Models", "MuseumTourSystem.Models\MuseumTourSystem.Models.csproj", "{DAD61FDF-480C-4880-BB4F-BFD2B7CC25C9}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MuseumTourSystem.DataStorage", "MuseumTourSystem.DataStorage\MuseumTourSystem.DataStorage.csproj", "{6443CF34-7472-4D58-A77C-D80729A9E253}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MuseumTourSystem.UserInterface", "MuseumTourSystem.UserInterface\MuseumTourSystem.UserInterface.csproj", "{26D538E3-2616-494D-BF0F-59DB08D7B5F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MuseumTourSystem.App", "MuseumTourSystem.App\MuseumTourSystem.App.csproj", "{3A31B541-A8ED-474E-B70B-A41525281845}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +35,15 @@ Global
 		{26D538E3-2616-494D-BF0F-59DB08D7B5F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26D538E3-2616-494D-BF0F-59DB08D7B5F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26D538E3-2616-494D-BF0F-59DB08D7B5F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A31B541-A8ED-474E-B70B-A41525281845}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A31B541-A8ED-474E-B70B-A41525281845}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A31B541-A8ED-474E-B70B-A41525281845}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A31B541-A8ED-474E-B70B-A41525281845}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D864CCAC-6470-42BF-8B6A-044FFB9C13FE}
 	EndGlobalSection
 EndGlobal

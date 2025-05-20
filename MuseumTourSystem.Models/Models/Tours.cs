@@ -98,7 +98,7 @@ namespace MuseumTourSystem.Models.Models
 
         public bool ContainsCityByName(string cityName)
         {
-            return Cities.Exits(cityName => c.Name.Equals(cityName, StringComparison.OrdinalIgnoreCase));
+            return Cities.Exists(c => c.Name.Equals(cityName, StringComparison.OrdinalIgnoreCase));
         }
 
         public bool ContainsMember(Member member)

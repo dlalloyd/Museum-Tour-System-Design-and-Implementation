@@ -39,7 +39,7 @@ namespace MuseumTourSystem.Models.Models
 
             if (!MuseumVisits.Contains(museumVisit))
             {
-                MuseumVisitsAdd(museumVisit);
+                MuseumVisits.Add(museumVisit);
                 museumVisit.City = this;
                 return true;
             }

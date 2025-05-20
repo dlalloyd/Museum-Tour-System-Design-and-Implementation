@@ -10,11 +10,11 @@ namespace MuseumTourSystem.Models.Models
     {
         public string Id { get; }
 
-        public string Name { get; }
+        public string Name { get; set; }
 
         public string BookingNumber { get; }
 
-        public Tours? Touring { get; }
+        public Tours? Touring { get; set; }
 
         public List<MuseumVisit> RegisteredMuseumVisits { get; }
 
